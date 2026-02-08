@@ -65,18 +65,25 @@ Open [http://localhost:3000](http://localhost:3000)
 }
 ```
 
-## Deployment to Vercel
+## Deployment
+
+### Deploy to Vercel (Recommended)
 
 [![Deploy with Vercel](https://vercel.com/button)](https://vercel.com/new)
 
-### Steps:
+### Deploy to Netlify
 
-1. Push code to GitHub
-2. Import repository in Vercel
-3. Add environment variables:
+1. Push code to GitHub.
+2. Connect repository to Netlify.
+3. Use the following build settings:
+   - **Build command**: `npm run build`
+   - **Publish directory**: `.next`
+4. Add Environment Variables in Netlify UI:
    - `ALGOLIA_APP_ID`
    - `ALGOLIA_API_KEY`
-4. Deploy!
+   - `ALGOLIA_AGENT_ID`
+
+---
 
 ## Tech Stack
 
