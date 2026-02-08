@@ -1,65 +1,154 @@
-import Image from "next/image";
+"use client";
+
+import Hero from "@/components/Hero";
+import DemoSection from "@/components/DemoSection";
+import ImageGrid from "@/components/ImageGrid";
+import {
+  TrustLogos,
+  AboutSection,
+  MethodologySection,
+  StatsSection,
+  TestimonialSection,
+  FinalCTA
+} from "@/components/AdditionalSections";
 
 export default function Home() {
   return (
-    <div className="flex min-h-screen items-center justify-center bg-zinc-50 font-sans dark:bg-black">
-      <main className="flex min-h-screen w-full max-w-3xl flex-col items-center justify-between py-32 px-16 bg-white dark:bg-black sm:items-start">
-        <Image
-          className="dark:invert"
-          src="/next.svg"
-          alt="Next.js logo"
-          width={100}
-          height={20}
-          priority
-        />
-        <div className="flex flex-col items-center gap-6 text-center sm:items-start sm:text-left">
-          <h1 className="max-w-xs text-3xl font-semibold leading-10 tracking-tight text-black dark:text-zinc-50">
-            To get started, edit the page.tsx file.
-          </h1>
-          <p className="max-w-md text-lg leading-8 text-zinc-600 dark:text-zinc-400">
-            Looking for a starting point or more instructions? Head over to{" "}
-            <a
-              href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              className="font-medium text-zinc-950 dark:text-zinc-50"
-            >
-              Templates
-            </a>{" "}
-            or the{" "}
-            <a
-              href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              className="font-medium text-zinc-950 dark:text-zinc-50"
-            >
-              Learning
-            </a>{" "}
-            center.
-          </p>
-        </div>
-        <div className="flex flex-col gap-4 text-base font-medium sm:flex-row">
-          <a
-            className="flex h-12 w-full items-center justify-center gap-2 rounded-full bg-foreground px-5 text-background transition-colors hover:bg-[#383838] dark:hover:bg-[#ccc] md:w-[158px]"
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <Image
-              className="dark:invert"
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={16}
-              height={16}
-            />
-            Deploy Now
-          </a>
-          <a
-            className="flex h-12 w-full items-center justify-center rounded-full border border-solid border-black/[.08] px-5 transition-colors hover:border-transparent hover:bg-black/[.04] dark:border-white/[.145] dark:hover:bg-[#1a1a1a] md:w-[158px]"
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Documentation
-          </a>
-        </div>
-      </main>
-    </div>
+    <main className="min-h-screen bg-black text-white selection:bg-accent selection:text-white">
+      {/* 1. Hero */}
+      <Hero />
+
+      {/* 2. Trust Indicators */}
+      <TrustLogos />
+
+      {/* 3. Problem / Context */}
+      <AboutSection />
+
+      {/* 4. Grid 1: Input Sources */}
+      <ImageGrid
+        title="Universal Input Sources"
+        description="IntentRefiner aggregates signals from every touchpoint in your customer ecosystem."
+        columns={4}
+        items={[
+          {
+            title: "Conversational Chat",
+            description: "Extracting intent from messy, multi-turn chat dialogues.",
+            image: "https://images.unsplash.com/photo-1516321497487-e288fb19713f?q=80&w=2070&auto=format&fit=crop"
+          },
+          {
+            title: "Direct Email",
+            description: "Parsing long-form unstructured requests into structured data.",
+            image: "https://images.unsplash.com/photo-1557200134-90327ee9fafa?q=80&w=2070&auto=format&fit=crop"
+          },
+          {
+            title: "Voice Transcripts",
+            description: "Processing raw telephony data with linguistic precision.",
+            image: "https://images.unsplash.com/photo-1589254065878-42c9da997008?q=80&w=2070&auto=format&fit=crop"
+          },
+          {
+            title: "Support Tickets",
+            description: "Triage automation for high-volume service desk environments.",
+            image: "https://images.unsplash.com/photo-1551434678-e076c223a692?q=80&w=2070&auto=format&fit=crop"
+          }
+        ]}
+      />
+
+      {/* 5. Methodology / Process */}
+      <MethodologySection />
+
+      {/* 6. Grid 2: Industry Impact */}
+      <ImageGrid
+        title="Industry-Specific Modeling"
+        description="Custom-tuned heuristics for every vertical, ensuring maximum accuracy."
+        columns={4}
+        items={[
+          {
+            title: "Global Retail",
+            description: "Handling returns, tracking, and warranty ambiguities.",
+            image: "https://images.unsplash.com/photo-1441986300917-64674bd600d8?q=80&w=2070&auto=format&fit=crop"
+          },
+          {
+            title: "Enterprise SaaS",
+            description: "Deep technical triage for complex platform issues.",
+            image: "https://images.unsplash.com/photo-1504384308090-c894fdcc538d?q=80&w=2070&auto=format&fit=crop"
+          },
+          {
+            title: "FinTech Ops",
+            description: "Securing intent extraction for sensitive transaction data.",
+            image: "https://images.unsplash.com/photo-1550751827-4bd374c3f58b?q=80&w=2070&auto=format&fit=crop"
+          },
+          {
+            title: "Logistics",
+            description: "Real-time routing of supply chain status enquiries.",
+            image: "https://images.unsplash.com/photo-1460925895917-afdab827c52f?q=80&w=2015&auto=format&fit=crop"
+          }
+        ]}
+      />
+
+      {/* 7. Interactive Demo */}
+      <DemoSection />
+
+      {/* 8. Grid 3: Architectural Integrity */}
+      <ImageGrid
+        title="Core Architecture"
+        description="Built on the foundations of security, scalability, and extreme precision."
+        columns={3}
+        items={[
+          {
+            title: "Zero-Latency Triage",
+            description: "Optimized for sub-20ms response times at scale.",
+            image: "https://images.unsplash.com/photo-1518770660439-4636190af475?q=80&w=2070&auto=format&fit=crop"
+          },
+          {
+            title: "Cryptographic Privacy",
+            description: "PII is redacted before processing, keeping audits clean.",
+            image: "https://images.unsplash.com/photo-1550751827-4bd374c3f58b?q=80&w=2070&auto=format&fit=crop"
+          },
+          {
+            title: "Pattern Divergence",
+            description: "Identifies outlier inputs that require human oversight.",
+            image: "https://images.unsplash.com/photo-1509228627152-72af903f79c4?q=80&w=2070&auto=format&fit=crop"
+          }
+        ]}
+      />
+
+      {/* 9. Impact Metrics */}
+      <StatsSection />
+
+      {/* 10. Testimonials */}
+      <TestimonialSection />
+
+      {/* 11. Grid 4: Ecosystem Connectivity */}
+      <ImageGrid
+        title="Ecosystem Integration"
+        description="Seamlessly connected to your existing operational stack via API."
+        columns={4}
+        items={[
+          {
+            title: "Cloud Infrastructure",
+            description: "Native support for AWS, GCP, and Azure environments.",
+            image: "https://images.unsplash.com/photo-1558494949-ef010cbdcc51?q=80&w=2026&auto=format&fit=crop"
+          },
+          {
+            title: "Webhook Hub",
+            description: "Trigger downstream automation in real-time.",
+            image: "https://images.unsplash.com/photo-1551288049-bbbda536ad37?q=80&w=2070&auto=format&fit=crop"
+          },
+          {
+            title: "CRM Sync",
+            description: "Keep your customer profiles enriched with intent data.",
+            image: "https://images.unsplash.com/photo-1432888498266-38ffec3eaf0a?q=80&w=2069&auto=format&fit=crop"
+          },
+          {
+            title: "Search Analytics",
+            description: "Deep integration with the Algolia Agent platform.",
+            image: "https://images.unsplash.com/photo-1526374965328-7f61d4dc18c5?q=80&w=2070&auto=format&fit=crop"
+          }
+        ]}
+      />
+
+      {/* 12. Conclusion & Footer */}
+      <FinalCTA />
+    </main>
   );
 }

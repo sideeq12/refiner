@@ -1,36 +1,126 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# IntentRefiner
 
-## Getting Started
+> Turn messy user complaints into machine-actionable intents
 
-First, run the development server:
+A modern AI-powered demo built for the Algolia Agent Studio Challenge. IntentRefiner transforms vague user complaints into structured, operational intents for support automation systems.
+
+## Features
+
+- 🎯 **AI-Powered Analysis**: Leverages Algolia Agent Studio to process natural language
+- 📊 **Structured Output**: Returns refined intent, category, confidence score, and matched issues
+- 🎨 **Modern UI**: Clean, dark-mode interface inspired by Vercel and Linear
+- ⚡ **Fast & Secure**: Server-side API integration with environment-based credentials
+- 🚀 **Deploy Ready**: Optimized for Vercel deployment
+
+## Quick Start
+
+### 1. Install Dependencies
+
+```bash
+npm install
+```
+
+### 2. Configure Environment
+
+Create `.env.local` file in the project root:
+
+```env
+ALGOLIA_APP_ID=your_app_id_here
+ALGOLIA_API_KEY=your_api_key_here
+```
+
+### 3. Run Development Server
 
 ```bash
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Open [http://localhost:3000](http://localhost:3000)
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+## How It Works
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+1. **Retrieve**: Queries Algolia index of historical issues
+2. **Converge**: Detects recurring failure patterns
+3. **Refine**: Outputs structured operational intent
 
-## Learn More
+## API Integration
 
-To learn more about Next.js, take a look at the following resources:
+### Endpoint: `/api/refine`
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+**Request**:
+```json
+{
+  "complaint": "My internet keeps dropping every evening..."
+}
+```
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+**Response**:
+```json
+{
+  "refined_intent": "Investigate recurring evening network outages...",
+  "intent_category": "Network Reliability",
+  "confidence": 0.87,
+  "matched_issue_ids": ["ISSUE_1021", "ISSUE_1187"],
+  "explanation": "Detected pattern of recurring network issues..."
+}
+```
 
-## Deploy on Vercel
+## Deployment to Vercel
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+[![Deploy with Vercel](https://vercel.com/button)](https://vercel.com/new)
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+### Steps:
+
+1. Push code to GitHub
+2. Import repository in Vercel
+3. Add environment variables:
+   - `ALGOLIA_APP_ID`
+   - `ALGOLIA_API_KEY`
+4. Deploy!
+
+## Tech Stack
+
+- **Framework**: Next.js 16 (App Router)
+- **Language**: TypeScript
+- **Styling**: Tailwind CSS v4
+- **AI**: Algolia Agent Studio
+- **Deployment**: Vercel
+
+## Project Structure
+
+```
+algolia/
+├── app/
+│   ├── api/refine/       # Algolia Agent integration
+│   ├── globals.css       # Dark mode styles
+│   ├── layout.tsx        # Root layout
+│   └── page.tsx          # Main page
+├── components/
+│   ├── DemoSection.tsx   # Interactive demo
+│   ├── Hero.tsx          # Landing section
+│   ├── HowItWorks.tsx    # Process overview
+│   └── Footer.tsx        # Footer
+└── .env.local            # Environment variables (not committed)
+```
+
+## Development
+
+```bash
+# Start dev server
+npm run dev
+
+# Build for production
+npm run build
+
+# Start production server
+npm start
+```
+
+## License
+
+MIT
+
+---
+
+Built for the **Algolia Agent Studio Challenge** 🏆
+
