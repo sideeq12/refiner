@@ -1,0 +1,56 @@
+{
+  "id": "alg_msg_oJywN0CpIUkfTUqO",
+  "role": "assistant",
+  "content": "{\n  \"refined_intent\": \"Diagnose and resolve degraded internet speeds for end user.\",\n  \"confidence\": 0.7,\n  \"intent_category\": \"connectivity\",\n  \"likely_platform\": \"network/internet\",\n  \"suggested_tags\": [\"connectivity\", \"performance\", \"internet\"],\n  \"matched_issue_ids\": [],\n  \"explanation\": \"No exact past issues in the record, but slow internet is a common connectivity problem requiring standard diagnostics and resolution steps.\"\n}",
+  "parts": [
+    {
+      "type": "step-start"
+    },
+    {
+      "type": "tool-invocation",
+      "tool_invocation": {
+        "tool_call_id": "call_TjGHJ6FPxrCuFPlCVwsE1wWD",
+        "tool_name": "algolia_search_index",
+        "args": {
+          "index": "main",
+          "query": "slow internet",
+          "number_of_results": 5,
+          "facet_filters": null
+        },
+        "result": {
+          "hits": [],
+          "nbHits": 0,
+          "queryID": "a7c614e740a361616b9b433078e10837"
+        },
+        "step": 0,
+        "state": "result"
+      }
+    },
+    {
+      "type": "step-start"
+    },
+    {
+      "type": "text",
+      "text": "{\n  \"refined_intent\": \"Diagnose and resolve degraded internet speeds for end user.\",\n  \"confidence\": 0.7,\n  \"intent_category\": \"connectivity\",\n  \"likely_platform\": \"network/internet\",\n  \"suggested_tags\": [\"connectivity\", \"performance\", \"internet\"],\n  \"matched_issue_ids\": [],\n  \"explanation\": \"No exact past issues in the record, but slow internet is a common connectivity problem requiring standard diagnostics and resolution steps.\"\n}"
+    }
+  ],
+  "tool_invocations": [
+    {
+      "tool_call_id": "call_TjGHJ6FPxrCuFPlCVwsE1wWD",
+      "tool_name": "algolia_search_index",
+      "args": {
+        "index": "main",
+        "query": "slow internet",
+        "number_of_results": 5,
+        "facet_filters": null
+      },
+      "result": {
+        "hits": [],
+        "nbHits": 0,
+        "queryID": "a7c614e740a361616b9b433078e10837"
+      },
+      "step": 0,
+      "state": "result"
+    }
+  ]
+}
